@@ -10,16 +10,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1756753653,
-        "narHash": "sha256-p+udqSH526z/f8rHKK1s81HzzLoSG2OWFl9DduBLYGY=",
+        "lastModified": 1756758868,
+        "narHash": "sha256-4EL6r6UMrAdnI2MHg6EITRTYzHUBl34kzNgKt31v7AU=",
         "owner": "seryl",
         "repo": "amalgam",
-        "rev": "28399d35443d10db8409c823e2acc6cc1a50cd13",
+        "rev": "2b6f25fa1a70faad7f33234ea8c7ad8174870c74",
         "type": "github"
       },
       "original": {
         "owner": "seryl",
-        "ref": "v0.6.0",
+        "ref": "v0.6.1",
         "repo": "amalgam",
         "type": "github"
       }

@@ -22,21 +22,85 @@ See `.amalgam-manifest.toml` for the complete list with specific versions.
 
 ### Using Packages in Your Nickel Projects
 
-```nickel
-# Import Kubernetes types
-let k8s = import "github:seryl/nickel-pkgs/pkgs/k8s_io/mod.ncl" in
+Packages can be imported directly from GitHub using Nickel's import system:
 
-# Import CrossPlane types  
+```nickel
+# Import entire package modules
+let k8s = import "github:seryl/nickel-pkgs/pkgs/k8s_io/mod.ncl" in
 let crossplane = import "github:seryl/nickel-pkgs/pkgs/crossplane/mod.ncl" in
 
-# Use type-safe configurations
-let deployment = k8s.apps.v1.Deployment & {
-  metadata.name = "my-app",
-  spec = {
+# Or import specific versions directly
+let k8s_v1 = import "github:seryl/nickel-pkgs/pkgs/k8s_io/v1/mod.ncl" in
+
+# Use type-safe configurations with full validation
+let deployment = k8s_v1.Deployment & {
+  apiVersion = "apps/v1",
+  kind = "Deployment",
+  metadata = k8s_v1.ObjectMeta & {
+    name = "my-app",
+    namespace = "default",
+    labels = {
+      app = "my-app",
+      environment = "production"
+    }
+  },
+  spec = k8s_v1.DeploymentSpec & {
     replicas = 3,
-    # Full type checking and auto-completion
+    selector = {
+      matchLabels = {
+        app = "my-app"
+      }
+    },
+    template = k8s_v1.PodTemplateSpec & {
+      metadata = k8s_v1.ObjectMeta & {
+        labels = {
+          app = "my-app"
+        }
+      },
+      spec = k8s_v1.PodSpec & {
+        containers = [{
+          name = "app",
+          image = "nginx:latest",
+          ports = [{
+            containerPort = 80
+          }]
+        }]
+      }
+    }
   }
-}
+} in
+
+deployment
+```
+
+### Working with Cross-Package Dependencies
+
+Packages automatically handle cross-package imports. For example, CrossPlane types reference Kubernetes ObjectMeta:
+
+```nickel
+# CrossPlane Composition using Kubernetes types
+let crossplane = import "github:seryl/nickel-pkgs/pkgs/crossplane/apiextensions.crossplane.io/v1/mod.ncl" in
+
+let composition = crossplane.Composition & {
+  apiVersion = "apiextensions.crossplane.io/v1",
+  kind = "Composition",
+  metadata = {  # This automatically uses k8s_io ObjectMeta
+    name = "my-composition",
+    labels = {
+      provider = "aws",
+      complexity = "simple"
+    }
+  },
+  spec = crossplane.CompositionSpec & {
+    compositeTypeRef = {
+      apiVersion = "example.io/v1",
+      kind = "XDatabase"
+    },
+    # Additional spec fields...
+  }
+} in
+
+composition
 ```
 
 ## 📂 Repository Structure
@@ -97,31 +161,44 @@ dependencies = { k8s_io = "1.33.4" }
 
 ## 📝 Package Format
 
-Each generated package follows this structure:
-- **mod.ncl** - Main module file exporting all types
-- **Version directories** - Organized by API version (v1, v1beta1, etc.)
-- **Type files** - Individual .ncl files for each type definition
-- **Smart imports** - Automatic cross-package import resolution
+Each generated package follows a consistent structure:
 
-Example generated type:
+### Package Organization
+- **mod.ncl** - Main module file that exports all API versions
+- **Version directories** (v1, v1beta1, v1alpha1, etc.) - API version-specific types
+- **Individual type files** - One .ncl file per type with contracts and documentation
+- **Automatic imports** - Cross-package dependencies resolved via relative paths
+
+### Example Package Structure
+```
+pkgs/k8s_io/
+├── mod.ncl                 # Main module exporting all versions
+├── Nickel-pkg.ncl          # Package metadata
+├── v1/
+│   ├── mod.ncl            # v1 API module
+│   ├── deployment.ncl     # Individual type definitions
+│   ├── pod.ncl
+│   └── ...
+└── v1beta1/
+    ├── mod.ncl
+    └── ...
+```
+
+### Generated Type Example
 ```nickel
-# composition.ncl
-let k8s_io_v1 = import "../../k8s_io/v1/objectmeta.ncl" in
+# deployment.ncl - Generated with full type safety and documentation
+let deploymentstatus = import "./deploymentstatus.ncl" in
+let objectmeta = import "./objectmeta.ncl" in
+let deploymentspec = import "./deploymentspec.ncl" in
 
 {
-  Composition = {
-    apiVersion | optional | String,
-    kind | optional | String,
-    metadata | optional | k8s_io_v1.ObjectMeta,
-    spec | CompositionSpec,
-  },
-  
-  CompositionSpec = {
-    compositeTypeRef | { 
-      apiVersion | String,
-      kind | String,
-    },
-    # ... additional fields
+  # Deployment enables declarative updates for Pods and ReplicaSets
+  Deployment = {
+    apiVersion | optional | String | doc "API version",
+    kind | optional | String | doc "Resource kind",
+    metadata | optional | objectmeta.ObjectMeta | doc "Standard object metadata",
+    spec | optional | deploymentspec.DeploymentSpec | doc "Deployment specification",
+    status | optional | deploymentstatus.DeploymentStatus | doc "Current status",
   }
 }
 ```
@@ -140,24 +217,45 @@ The repository uses GitHub Actions for CI/CD, which automatically validates all 
 ## 🛠️ Technical Details
 
 ### Amalgam Integration
-This repository uses [Amalgam](https://github.com/seryl/amalgam) which provides:
-- Universal schema parsing (CRDs, OpenAPI, Go types)
-- Smart cross-package import resolution
-- Idempotent package generation
-- Type registry tracking
+This repository uses [Amalgam](https://github.com/seryl/amalgam) (currently v0.6.1) which provides:
+- Universal schema parsing (Kubernetes CRDs, OpenAPI specs, Go types)
+- Automatic cross-package import resolution with dependency tracking
+- Idempotent package generation - same input always produces same output
+- Type registry for managing complex type hierarchies
+- Support for all Kubernetes API conventions and CRD formats
 
-### Flake-Parts Composability
-Other Nix flakes can import this repository as a module:
+### Package Dependencies
+All packages depend on the Kubernetes core types (k8s_io) for common types like ObjectMeta. The dependency graph is automatically managed by Amalgam during generation.
+
+### Using This Repository as a Flake Module
+Other Nix projects can import this repository to access both the packages and tooling:
+
 ```nix
 {
-  inputs.nickel-pkgs.url = "github:seryl/nickel-pkgs";
-  
-  # Use the packages in your flake
-  outputs = inputs: {
-    # Access nickel-with-packages, amalgam, etc.
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nickel-pkgs.url = "github:seryl/nickel-pkgs";
+  };
+
+  outputs = { self, nixpkgs, nickel-pkgs, ... }: {
+    devShells.default = pkgs.mkShell {
+      buildInputs = [
+        # Get Nickel with package support
+        nickel-pkgs.packages.${system}.nickel-with-packages
+        # Get Amalgam for generating new types
+        nickel-pkgs.packages.${system}.amalgam-bin
+      ];
+    };
   };
 }
 ```
+
+### CI/CD Pipeline
+The repository includes a comprehensive CI pipeline that:
+1. Generates all packages from `.amalgam-manifest.toml`
+2. Validates all generated Nickel files with type checking
+3. Ensures cross-package imports resolve correctly
+4. Runs on every push via GitHub Actions
 
 ## 📜 License
 

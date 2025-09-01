@@ -9,7 +9,6 @@ pkgs.writeShellApplication {
     attic-client
     git
     jq
-    yq
     coreutils
     findutils
   ];
