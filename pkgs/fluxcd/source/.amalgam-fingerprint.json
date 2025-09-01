@@ -1,0 +1,21 @@
+{
+  "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "metadata_hash": "61ef527e636e56b1a45d85bac5267189dced59178cf7fdeb323a435f8efc0723",
+  "combined_hash": "4814b2f6a0d04b5dcb00fe032538c4ff0f8022f9d5e82024f2394ea85ce25c38",
+  "created_at": "2025-09-01T19:42:29.775817Z",
+  "source_info": {
+    "UrlCollection": {
+      "base_url": "https://github.com/fluxcd/source-controller/tree/v1.6.2/config/crd/bases@v1.6.2",
+      "urls": [
+        "https://github.com/fluxcd/source-controller/tree/v1.6.2/config/crd/bases@v1.6.2"
+      ],
+      "etags": [
+        null
+      ],
+      "last_modified": [
+        null
+      ]
+    }
+  },
+  "amalgam_version": "0.6.0"
+}

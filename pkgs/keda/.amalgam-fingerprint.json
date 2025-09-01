@@ -1,0 +1,21 @@
+{
+  "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "metadata_hash": "505f4a2733094ae9448451f2b0d5265868225951c186cb1be91e61724f76f81b",
+  "combined_hash": "f859ea3652f5e9ef7bf24c998010d3a783df3f5edd5ee4ff62aa7d2e2906286a",
+  "created_at": "2025-09-01T19:42:30.403874Z",
+  "source_info": {
+    "UrlCollection": {
+      "base_url": "https://github.com/kedacore/keda/tree/v2.17.2/config/crd/bases@v2.17.2",
+      "urls": [
+        "https://github.com/kedacore/keda/tree/v2.17.2/config/crd/bases@v2.17.2"
+      ],
+      "etags": [
+        null
+      ],
+      "last_modified": [
+        null
+      ]
+    }
+  },
+  "amalgam_version": "0.6.0"
+}
