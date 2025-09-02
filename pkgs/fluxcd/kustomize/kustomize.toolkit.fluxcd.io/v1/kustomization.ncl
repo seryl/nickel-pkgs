@@ -62,7 +62,7 @@ DependsOn may contain a meta.NamespacedObjectReference slice
 with references to Kustomization resources that must be ready before this
 Kustomization can be reconciled.
 "%,
-      force | Bool | doc m%"
+      "force" | Bool | doc m%"
 Force instructs the controller to recreate resources
 when patching fails due to an immutable field change.
 "% | default = false,
@@ -198,7 +198,7 @@ e.g. ${var:=default}, ${var:position} and ${var/substring/replacement}.
 Name of the values referent. Should reside in the same namespace as the
 referring resource.
 "%,
-          optional | Bool | doc m%"
+          "optional" | Bool | doc m%"
 Optional indicates whether the referenced resource must exist, or whether to
 tolerate its absence. If true and the referenced resource is absent, proceed
 as if the resource was present but empty, without any variables defined.

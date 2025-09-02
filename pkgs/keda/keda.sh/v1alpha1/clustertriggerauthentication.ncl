@@ -1,7 +1,7 @@
 # Module: clustertriggerauthentication.keda.sh
 
-let k8s_io_envvar = import "k8s_io" in
 let k8s_io_objectmeta = import "k8s_io" in
+let k8s_io_envvar = import "k8s_io" in
 
 {
   ClusterTriggerAuthentication = {
@@ -18,7 +18,7 @@ Cannot be updated.
 In CamelCase.
 More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 "%,
-    metadata | optional | k8s_io_envvar.ObjectMeta,
+    metadata | optional | k8s_io_objectmeta.ObjectMeta,
     spec | {
       awsSecretManager | optional | {
         credentials | optional | {
@@ -124,7 +124,7 @@ mechanism
         name | String,
         parameter | String,
       },
-      env | optional | Array k8s_io_envvar.EnvVar,
+      env | optional | Array k8s_io_objectmeta.EnvVar,
       gcpSecretManager | optional | {
         credentials | optional | {
           clientSecret | {

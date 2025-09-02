@@ -1,8 +1,8 @@
 # Module: pipelinerun.tekton.dev
 
-let k8s_io_envvar = import "k8s_io" in
 let k8s_io_toleration = import "k8s_io" in
 let k8s_io_objectmeta = import "k8s_io" in
+let k8s_io_envvar = import "k8s_io" in
 
 {
   PipelineRun = {
@@ -19,7 +19,7 @@ Cannot be updated.
 In CamelCase.
 More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 "%,
-    metadata | optional | k8s_io_envvar.ObjectMeta,
+    metadata | optional | k8s_io_toleration.ObjectMeta,
     spec | optional | {
       params | optional | Array {
         name | String,
@@ -139,7 +139,7 @@ EnableServiceLinks indicates whether information about services should be inject
 environment variables, matching the syntax of Docker links.
 Optional: Defaults to true.
 "%,
-          env | optional | Array k8s_io_envvar.EnvVar | doc m%"
+          env | optional | Array k8s_io_toleration.EnvVar | doc m%"
 List of environment variables that can be provided to the containers belonging to the pod.
 "%,
           hostAliases | optional | Array {
@@ -190,7 +190,7 @@ SecurityContext holds pod-level security attributes and common container setting
 Optional: Defaults to empty.  See type description for default values of each field.
 See Pod.spec.securityContext (API version: v1)
 "%,
-          tolerations | optional | Array k8s_io_envvar.Toleration | doc "If specified, the pod's tolerations.",
+          tolerations | optional | Array k8s_io_toleration.Toleration | doc "If specified, the pod's tolerations.",
           topologySpreadConstraints | optional | Array {
             labelSelector | optional | {
               matchExpressions | optional | Array {
@@ -456,7 +456,7 @@ EnableServiceLinks indicates whether information about services should be inject
 environment variables, matching the syntax of Docker links.
 Optional: Defaults to true.
 "%,
-          env | optional | Array k8s_io_envvar.EnvVar | doc m%"
+          env | optional | Array k8s_io_toleration.EnvVar | doc m%"
 List of environment variables that can be provided to the containers belonging to the pod.
 "%,
           hostAliases | optional | Array {
@@ -507,7 +507,7 @@ SecurityContext holds pod-level security attributes and common container setting
 Optional: Defaults to empty.  See type description for default values of each field.
 See Pod.spec.securityContext (API version: v1)
 "%,
-          tolerations | optional | Array k8s_io_envvar.Toleration | doc "If specified, the pod's tolerations.",
+          tolerations | optional | Array k8s_io_toleration.Toleration | doc "If specified, the pod's tolerations.",
           topologySpreadConstraints | optional | Array {
             labelSelector | optional | {
               matchExpressions | optional | Array {
@@ -706,7 +706,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "optional specify whether the ConfigMap or its keys must be defined",
+          "optional" | optional | Bool | doc "optional specify whether the ConfigMap or its keys must be defined",
         } | doc "ConfigMap represents a configMap that should populate this workspace.",
         csi | optional | {
           driver | String | doc m%"
@@ -822,7 +822,7 @@ everything".
 Select a single ClusterTrustBundle by object name.  Mutually-exclusive
 with signerName and labelSelector.
 "%,
-              optional | optional | Bool | doc m%"
+              "optional" | optional | Bool | doc m%"
 If true, don't block pod startup if the referenced ClusterTrustBundle(s)
 aren't available.  If using name, then the named ClusterTrustBundle is
 allowed not to exist.  If using signerName, then the combination of
@@ -883,7 +883,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "optional specify whether the ConfigMap or its keys must be defined",
+              "optional" | optional | Bool | doc "optional specify whether the ConfigMap or its keys must be defined",
             } | doc "configMap information about the configMap data to project",
             downwardAPI | optional | {
               items | optional | Array {
@@ -947,7 +947,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "optional field specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "optional field specify whether the Secret or its key must be defined",
             } | doc "secret information about the secret data to project",
             serviceAccountToken | optional | {
               audience | optional | String | doc m%"
@@ -1009,7 +1009,7 @@ present. If a key is specified which is not present in the Secret,
 the volume setup will error unless it is marked optional. Paths must be
 relative and may not contain the '..' path or start with '..'.
 "%,
-          optional | optional | Bool | doc "optional field specify whether the Secret or its keys must be defined",
+          "optional" | optional | Bool | doc "optional field specify whether the Secret or its keys must be defined",
           secretName | optional | String | doc m%"
 secretName is the name of the secret in the pod's namespace to use.
 More info: https://kubernetes.io/docs/concepts/storage/volumes#secret

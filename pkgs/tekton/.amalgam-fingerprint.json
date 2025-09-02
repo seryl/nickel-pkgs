@@ -2,7 +2,7 @@
   "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "metadata_hash": "f1dcd66ba242d37f1edad26f3c234477f70f3868c283d68b15d58b6015eae1da",
   "combined_hash": "20841247cb4489b7c611424a9c85376adfc00c6f1884663f67ed2cc16dd2e9b7",
-  "created_at": "2025-09-01T19:42:32.444649Z",
+  "created_at": "2025-09-01T22:55:04.193003Z",
   "source_info": {
     "UrlCollection": {
       "base_url": "https://github.com/tektoncd/pipeline/tree/v1.3.1/config/300-crds@v1.3.1",
@@ -17,5 +17,5 @@
       ]
     }
   },
-  "amalgam_version": "0.6.0"
+  "amalgam_version": "0.6.3"
 }

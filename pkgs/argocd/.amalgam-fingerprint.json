@@ -2,7 +2,7 @@
   "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "metadata_hash": "f8189515564edbccaaa0da4940a0a700d3c6c45cc9dd9b2900e4a7c2d04d7249",
   "combined_hash": "60a750f7e7a647ff43d099bf26cd8b3b948d498b68c6ed455329eee5927741b3",
-  "created_at": "2025-09-01T19:42:26.895089Z",
+  "created_at": "2025-09-01T22:54:58.806849Z",
   "source_info": {
     "UrlCollection": {
       "base_url": "https://github.com/argoproj/argo-cd/tree/v3.1.1/manifests/crds@v3.1.1",
@@ -17,5 +17,5 @@
       ]
     }
   },
-  "amalgam_version": "0.6.0"
+  "amalgam_version": "0.6.3"
 }

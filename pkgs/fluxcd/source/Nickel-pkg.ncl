@@ -1,6 +1,6 @@
 # Amalgam Package Manifest
-# Generated: 2025-09-01T19:42:29.775696+00:00
-# Generator: amalgam v0.6.0
+# Generated: 2025-09-01T22:55:01.214202+00:00
+# Generator: amalgam v0.6.3
 # Source: https://github.com/fluxcd/source-controller/tree/v1.6.2/config/crd/bases
 # Git ref: v1.6.2
 {

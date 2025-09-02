@@ -7,7 +7,7 @@
 
     # Amalgam for generating packages
     amalgam = {
-      url = "github:seryl/amalgam/v0.6.1";
+      url = "github:seryl/amalgam/v0.6.4";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

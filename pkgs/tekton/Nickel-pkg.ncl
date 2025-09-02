@@ -1,6 +1,6 @@
 # Amalgam Package Manifest
-# Generated: 2025-09-01T19:42:32.444514+00:00
-# Generator: amalgam v0.6.0
+# Generated: 2025-09-01T22:55:04.192833+00:00
+# Generator: amalgam v0.6.3
 # Source: https://github.com/tektoncd/pipeline/tree/v1.3.1/config/300-crds
 # Git ref: v1.3.1
 {

@@ -54,7 +54,7 @@ Image reference name to run for this StepAction.
 More info: https://kubernetes.io/docs/concepts/containers/images
 "%,
       params | optional | Array {
-        default | optional | Dyn | doc m%"
+        "default" | optional | Dyn | doc m%"
 Default is the value a parameter takes if no input value is supplied. If
 default is set, a Task may be executed without a supplied value for the
 parameter.

@@ -29,7 +29,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -58,7 +58,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -83,7 +83,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -97,7 +97,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -117,7 +117,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "Optional client secret. Only required with the OAuth authentication method.",
         enableHTTP2 | optional | Bool | doc "Whether to enable HTTP2.",
         environment | optional | String | doc "The Azure environment.",
@@ -140,7 +140,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -151,7 +151,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -166,7 +166,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -208,7 +208,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -219,7 +219,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -232,7 +232,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -243,7 +243,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -256,7 +256,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -315,7 +315,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -326,7 +326,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -339,7 +339,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -350,7 +350,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -363,7 +363,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -388,7 +388,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -402,7 +402,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -423,7 +423,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -448,7 +448,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -462,7 +462,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -516,7 +516,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -527,7 +527,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -542,7 +542,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -584,7 +584,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -595,7 +595,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -608,7 +608,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -619,7 +619,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -632,7 +632,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -704,7 +704,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -715,7 +715,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -728,7 +728,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -739,7 +739,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -752,7 +752,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -775,7 +775,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc m%"
 Consul ACL TokenRef, if not provided it will use the ACL from the local Consul Agent.
 "%,
@@ -795,7 +795,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -830,7 +830,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -841,7 +841,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -856,7 +856,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -898,7 +898,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -909,7 +909,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -922,7 +922,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -933,7 +933,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -946,7 +946,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -994,7 +994,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1005,7 +1005,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -1018,7 +1018,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1029,7 +1029,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -1042,7 +1042,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -1088,7 +1088,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -1113,7 +1113,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -1127,7 +1127,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -1166,7 +1166,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1177,7 +1177,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -1192,7 +1192,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -1234,7 +1234,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1245,7 +1245,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -1258,7 +1258,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1269,7 +1269,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -1282,7 +1282,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -1330,7 +1330,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1341,7 +1341,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -1354,7 +1354,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1365,7 +1365,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -1378,7 +1378,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -1404,7 +1404,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -1428,7 +1428,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -1442,7 +1442,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -1480,7 +1480,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1491,7 +1491,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -1506,7 +1506,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -1548,7 +1548,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1559,7 +1559,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -1572,7 +1572,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1583,7 +1583,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -1596,7 +1596,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -1648,7 +1648,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1659,7 +1659,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -1672,7 +1672,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1683,7 +1683,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -1696,7 +1696,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -1723,7 +1723,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "AccessKey is the AWS API key.",
         enableHTTP2 | optional | Bool | doc m%"
 Whether to enable HTTP2.
@@ -1781,7 +1781,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "SecretKey is the AWS API secret.",
         tlsConfig | optional | {
           ca | optional | {
@@ -1794,7 +1794,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1805,7 +1805,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -1818,7 +1818,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1829,7 +1829,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -1842,7 +1842,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -1879,7 +1879,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -1901,7 +1901,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -1915,7 +1915,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -1941,7 +1941,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -1952,7 +1952,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -1967,7 +1967,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -2009,7 +2009,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2020,7 +2020,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -2033,7 +2033,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2044,7 +2044,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -2057,7 +2057,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -2105,7 +2105,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2116,7 +2116,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -2129,7 +2129,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2140,7 +2140,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -2153,7 +2153,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -2214,7 +2214,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -2239,7 +2239,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -2253,7 +2253,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -2286,7 +2286,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2297,7 +2297,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -2312,7 +2312,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -2354,7 +2354,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2365,7 +2365,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -2378,7 +2378,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2389,7 +2389,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -2402,7 +2402,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -2451,7 +2451,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2462,7 +2462,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -2475,7 +2475,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2486,7 +2486,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -2499,7 +2499,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -2529,7 +2529,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -2554,7 +2554,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -2568,7 +2568,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -2598,7 +2598,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2609,7 +2609,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -2624,7 +2624,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -2666,7 +2666,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2677,7 +2677,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -2690,7 +2690,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2701,7 +2701,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -2714,7 +2714,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -2764,7 +2764,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2775,7 +2775,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -2788,7 +2788,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2799,7 +2799,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -2812,7 +2812,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -2839,7 +2839,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -2872,7 +2872,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2883,7 +2883,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -2898,7 +2898,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -2940,7 +2940,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2951,7 +2951,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -2964,7 +2964,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -2975,7 +2975,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -2988,7 +2988,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -3033,7 +3033,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3044,7 +3044,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -3057,7 +3057,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3068,7 +3068,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -3081,7 +3081,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -3139,7 +3139,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -3164,7 +3164,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -3178,7 +3178,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -3218,7 +3218,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3229,7 +3229,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -3244,7 +3244,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -3286,7 +3286,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3297,7 +3297,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -3310,7 +3310,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3321,7 +3321,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -3334,7 +3334,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -3401,7 +3401,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3412,7 +3412,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -3425,7 +3425,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3436,7 +3436,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -3449,7 +3449,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -3477,7 +3477,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -3499,7 +3499,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -3513,7 +3513,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -3543,7 +3543,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3554,7 +3554,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -3569,7 +3569,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -3611,7 +3611,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3622,7 +3622,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -3635,7 +3635,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3646,7 +3646,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -3659,7 +3659,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -3707,7 +3707,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3718,7 +3718,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -3731,7 +3731,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3742,7 +3742,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -3755,7 +3755,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -3792,7 +3792,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "AccessKey is the AWS API key.",
         authorization | optional | {
           credentials | optional | {
@@ -3804,7 +3804,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -3829,7 +3829,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -3843,7 +3843,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -3873,7 +3873,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3884,7 +3884,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -3899,7 +3899,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -3941,7 +3941,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3952,7 +3952,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -3965,7 +3965,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -3976,7 +3976,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -3989,7 +3989,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -4040,7 +4040,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "SecretKey is the AWS API secret.",
         tlsConfig | optional | {
           ca | optional | {
@@ -4053,7 +4053,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4064,7 +4064,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -4077,7 +4077,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4088,7 +4088,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -4101,7 +4101,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -4127,7 +4127,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -4159,7 +4159,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4170,7 +4170,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -4185,7 +4185,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -4227,7 +4227,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4238,7 +4238,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -4251,7 +4251,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4262,7 +4262,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -4275,7 +4275,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -4325,7 +4325,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4336,7 +4336,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -4349,7 +4349,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4360,7 +4360,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -4373,7 +4373,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -4469,7 +4469,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -4491,7 +4491,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -4505,7 +4505,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -4532,7 +4532,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4543,7 +4543,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -4558,7 +4558,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -4600,7 +4600,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4611,7 +4611,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -4624,7 +4624,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4635,7 +4635,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -4648,7 +4648,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -4702,7 +4702,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4713,7 +4713,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -4726,7 +4726,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4737,7 +4737,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -4750,7 +4750,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -4776,7 +4776,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
           } | doc "ConfigMap containing data to use for the targets.",
           secret | optional | {
             key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4787,7 +4787,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing data to use for the targets.",
         } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -4802,7 +4802,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -4844,7 +4844,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4855,7 +4855,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -4868,7 +4868,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -4879,7 +4879,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -4892,7 +4892,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -4932,7 +4932,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc m%"
 The applicationCredentialSecret field is required if using an application
 credential to authenticate.
@@ -4956,7 +4956,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc m%"
 Password for the Identity V2 and V3 APIs. Consult with your provider's
 control panel to discover your account's preferred method of authentication.
@@ -4990,7 +4990,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5001,7 +5001,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -5014,7 +5014,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5025,7 +5025,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -5038,7 +5038,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -5071,7 +5071,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "SecretKeySelector selects a key of a Secret.",
         consumerKey | {
           key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5082,7 +5082,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "SecretKeySelector selects a key of a Secret.",
         endpoint | optional | String | doc "Custom endpoint to be used.",
         refreshInterval | optional | String | doc "Refresh interval to re-read the resources list.",
@@ -5114,7 +5114,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 Selects a key of a Secret in the namespace that contains the credentials for authentication.
 "%,
@@ -5139,7 +5139,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `password` specifies a key of a Secret containing the password for
 authentication.
@@ -5153,7 +5153,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `username` specifies a key of a Secret containing the username for
 authentication.
@@ -5187,7 +5187,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5198,7 +5198,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc m%"
 `clientId` specifies a key of a Secret or ConfigMap containing the
@@ -5213,7 +5213,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc m%"
 `clientSecret` specifies a key of a Secret containing the OAuth2
 client's secret.
@@ -5255,7 +5255,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5266,7 +5266,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Certificate authority used when verifying server certificates.",
             cert | optional | {
@@ -5279,7 +5279,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
               } | doc "ConfigMap containing data to use for the targets.",
               secret | optional | {
                 key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5290,7 +5290,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-                optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+                "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
               } | doc "Secret containing data to use for the targets.",
             } | doc "Client certificate to present when doing client-authentication.",
             insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -5303,7 +5303,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing the client key file for the targets.",
             maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -5355,7 +5355,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5366,7 +5366,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -5379,7 +5379,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5390,7 +5390,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -5403,7 +5403,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -5504,7 +5504,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "Secret key to use when listing targets.",
         tagsFilter | optional | Array String | doc m%"
 TagsFilter specify a tag filter (a server needs to have all defined tags to be listed) to apply on the server listing request.
@@ -5520,7 +5520,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5531,7 +5531,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Certificate authority used when verifying server certificates.",
           cert | optional | {
@@ -5544,7 +5544,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
             } | doc "ConfigMap containing data to use for the targets.",
             secret | optional | {
               key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5555,7 +5555,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-              optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+              "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
             } | doc "Secret containing data to use for the targets.",
           } | doc "Client certificate to present when doing client-authentication.",
           insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -5568,7 +5568,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing the client key file for the targets.",
           maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.
@@ -5629,7 +5629,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
           } | doc "ConfigMap containing data to use for the targets.",
           secret | optional | {
             key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5640,7 +5640,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing data to use for the targets.",
         } | doc "Certificate authority used when verifying server certificates.",
         cert | optional | {
@@ -5653,7 +5653,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the ConfigMap or its key must be defined",
           } | doc "ConfigMap containing data to use for the targets.",
           secret | optional | {
             key | String | doc "The key of the secret to select from.  Must be a valid secret key.",
@@ -5664,7 +5664,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-            optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+            "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
           } | doc "Secret containing data to use for the targets.",
         } | doc "Client certificate to present when doing client-authentication.",
         insecureSkipVerify | optional | Bool | doc "Disable target certificate validation.",
@@ -5677,7 +5677,7 @@ allowed to be empty. Instances of this type with an empty value here are
 almost certainly wrong.
 More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
 "% | default = "",
-          optional | optional | Bool | doc "Specify whether the Secret or its key must be defined",
+          "optional" | optional | Bool | doc "Specify whether the Secret or its key must be defined",
         } | doc "Secret containing the client key file for the targets.",
         maxVersion | optional | String | doc m%"
 Maximum acceptable TLS version.

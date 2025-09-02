@@ -240,7 +240,7 @@ jsonPath is a simple JSON path (i.e. with array notation) which is evaluated aga
 each custom resource to produce the value for this column.
 "%,
           name | String | doc "name is a human readable name for the column.",
-          priority | optional | Number | doc m%"
+          "priority" | optional | Number | doc m%"
 priority is an integer defining the relative importance of this column compared to others. Lower
 numbers are considered higher priority. Columns that may be omitted in limited space scenarios
 should be given a priority greater than 0.

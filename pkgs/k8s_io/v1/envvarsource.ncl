@@ -1,9 +1,9 @@
 # Module: k8s.io.v1.envvarsource
 
-let secretkeyselector = import "./secretkeyselector.ncl" in
-let configmapkeyselector = import "./configmapkeyselector.ncl" in
 let objectfieldselector = import "./objectfieldselector.ncl" in
+let configmapkeyselector = import "./configmapkeyselector.ncl" in
 let resourcefieldselector = import "./resourcefieldselector.ncl" in
+let secretkeyselector = import "./secretkeyselector.ncl" in
 
 {
   # EnvVarSource represents a source for the value of an EnvVar.

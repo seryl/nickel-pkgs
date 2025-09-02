@@ -1,7 +1,7 @@
 # Module: challenge.acme.cert-manager.io
 
-let k8s_io_toleration = import "k8s_io" in
 let k8s_io_objectmeta = import "k8s_io" in
+let k8s_io_toleration = import "k8s_io" in
 
 {
   Challenge = {
@@ -18,7 +18,7 @@ Cannot be updated.
 In CamelCase.
 More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 "%,
-    metadata | k8s_io_toleration.ObjectMeta,
+    metadata | k8s_io_objectmeta.ObjectMeta,
     spec | {
       authorizationURL | String | doc m%"
 The URL to the ACME Authorization resource that this
@@ -1145,7 +1145,7 @@ Note that this field cannot be set when spec.os.name is windows.
 "%,
                 } | doc "If specified, the pod's security context",
                 serviceAccountName | optional | String | doc "If specified, the pod's service account",
-                tolerations | optional | Array k8s_io_toleration.Toleration | doc "If specified, the pod's tolerations.",
+                tolerations | optional | Array k8s_io_objectmeta.Toleration | doc "If specified, the pod's tolerations.",
               } | doc m%"
 PodSpec defines overrides for the HTTP01 challenge solver pod.
 Check ACMEChallengeSolverHTTP01IngressPodSpec to find out currently supported fields.
@@ -1839,7 +1839,7 @@ Note that this field cannot be set when spec.os.name is windows.
 "%,
                 } | doc "If specified, the pod's security context",
                 serviceAccountName | optional | String | doc "If specified, the pod's service account",
-                tolerations | optional | Array k8s_io_toleration.Toleration | doc "If specified, the pod's tolerations.",
+                tolerations | optional | Array k8s_io_objectmeta.Toleration | doc "If specified, the pod's tolerations.",
               } | doc m%"
 PodSpec defines overrides for the HTTP01 challenge solver pod.
 Check ACMEChallengeSolverHTTP01IngressPodSpec to find out currently supported fields.

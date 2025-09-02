@@ -2,7 +2,7 @@
   "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "metadata_hash": "d7d7571fded34189f5a7088498140ddbf9557f47a2de997b30180238f25bf032",
   "combined_hash": "d4faf7d74939f95e5fc77aef025f7b6fa1f1c84e94c3da95c39604708323d59b",
-  "created_at": "2025-09-01T19:42:29.199794Z",
+  "created_at": "2025-09-01T22:55:00.722169Z",
   "source_info": {
     "UrlCollection": {
       "base_url": "https://github.com/fluxcd/kustomize-controller/tree/v1.6.1/config/crd/bases@v1.6.1",
@@ -17,5 +17,5 @@
       ]
     }
   },
-  "amalgam_version": "0.6.0"
+  "amalgam_version": "0.6.3"
 }

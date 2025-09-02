@@ -1,6 +1,6 @@
 # Amalgam Package Manifest
-# Generated: 2025-09-01T19:42:26.195897+00:00
-# Generator: amalgam v0.6.0
+# Generated: 2025-09-01T22:54:58.223925+00:00
+# Generator: amalgam v0.6.3
 # Source: k8s-core (local)
 {
   # Package identity

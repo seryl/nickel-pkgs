@@ -1,6 +1,6 @@
 # Amalgam Package Manifest
-# Generated: 2025-09-01T19:42:30.403749+00:00
-# Generator: amalgam v0.6.0
+# Generated: 2025-09-01T22:55:01.896254+00:00
+# Generator: amalgam v0.6.3
 # Source: https://github.com/kedacore/keda/tree/v2.17.2/config/crd/bases
 # Git ref: v2.17.2
 {

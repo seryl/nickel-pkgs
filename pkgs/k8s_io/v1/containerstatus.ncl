@@ -1,10 +1,10 @@
 # Module: k8s.io.v1.containerstatus
 
-let resourcerequirements = import "./resourcerequirements.ncl" in
-let containerstate = import "./containerstate.ncl" in
-let resourcestatus = import "./resourcestatus.ncl" in
-let volumemountstatus = import "./volumemountstatus.ncl" in
 let containeruser = import "./containeruser.ncl" in
+let volumemountstatus = import "./volumemountstatus.ncl" in
+let resourcestatus = import "./resourcestatus.ncl" in
+let containerstate = import "./containerstate.ncl" in
+let resourcerequirements = import "./resourcerequirements.ncl" in
 
 {
   # ContainerStatus contains details for the current status of this container.

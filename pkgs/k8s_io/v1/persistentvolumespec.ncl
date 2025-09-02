@@ -1,29 +1,29 @@
 # Module: k8s.io.v1.persistentvolumespec
 
-let nfsvolumesource = import "./nfsvolumesource.ncl" in
-let hostpathvolumesource = import "./hostpathvolumesource.ncl" in
-let scaleiopersistentvolumesource = import "./scaleiopersistentvolumesource.ncl" in
-let storageospersistentvolumesource = import "./storageospersistentvolumesource.ncl" in
 let localvolumesource = import "./localvolumesource.ncl" in
 let azurefilepersistentvolumesource = import "./azurefilepersistentvolumesource.ncl" in
-let flexpersistentvolumesource = import "./flexpersistentvolumesource.ncl" in
+let nfsvolumesource = import "./nfsvolumesource.ncl" in
+let cephfspersistentvolumesource = import "./cephfspersistentvolumesource.ncl" in
+let scaleiopersistentvolumesource = import "./scaleiopersistentvolumesource.ncl" in
+let rbdpersistentvolumesource = import "./rbdpersistentvolumesource.ncl" in
 let glusterfspersistentvolumesource = import "./glusterfspersistentvolumesource.ncl" in
-let flockervolumesource = import "./flockervolumesource.ncl" in
-let awselasticblockstorevolumesource = import "./awselasticblockstorevolumesource.ncl" in
+let photonpersistentdiskvolumesource = import "./photonpersistentdiskvolumesource.ncl" in
+let hostpathvolumesource = import "./hostpathvolumesource.ncl" in
 let iscsipersistentvolumesource = import "./iscsipersistentvolumesource.ncl" in
-let cinderpersistentvolumesource = import "./cinderpersistentvolumesource.ncl" in
+let volumenodeaffinity = import "./volumenodeaffinity.ncl" in
 let portworxvolumesource = import "./portworxvolumesource.ncl" in
 let fcvolumesource = import "./fcvolumesource.ncl" in
+let awselasticblockstorevolumesource = import "./awselasticblockstorevolumesource.ncl" in
 let quobytevolumesource = import "./quobytevolumesource.ncl" in
-let cephfspersistentvolumesource = import "./cephfspersistentvolumesource.ncl" in
+let storageospersistentvolumesource = import "./storageospersistentvolumesource.ncl" in
 let vspherevirtualdiskvolumesource = import "./vspherevirtualdiskvolumesource.ncl" in
+let csipersistentvolumesource = import "./csipersistentvolumesource.ncl" in
+let flockervolumesource = import "./flockervolumesource.ncl" in
 let objectreference = import "./objectreference.ncl" in
 let gcepersistentdiskvolumesource = import "./gcepersistentdiskvolumesource.ncl" in
-let rbdpersistentvolumesource = import "./rbdpersistentvolumesource.ncl" in
 let azurediskvolumesource = import "./azurediskvolumesource.ncl" in
-let volumenodeaffinity = import "./volumenodeaffinity.ncl" in
-let photonpersistentdiskvolumesource = import "./photonpersistentdiskvolumesource.ncl" in
-let csipersistentvolumesource = import "./csipersistentvolumesource.ncl" in
+let flexpersistentvolumesource = import "./flexpersistentvolumesource.ncl" in
+let cinderpersistentvolumesource = import "./cinderpersistentvolumesource.ncl" in
 
 {
   # PersistentVolumeSpec is the specification of a persistent volume.

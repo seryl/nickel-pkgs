@@ -33,7 +33,7 @@ DependsOn may contain a meta.NamespacedObjectReference slice
 with references to Kustomization resources that must be ready before this
 Kustomization can be reconciled.
 "%,
-      force | Bool | doc m%"
+      "force" | Bool | doc m%"
 Force instructs the controller to recreate resources
 when patching fails due to an immutable field change.
 "% | default = false,

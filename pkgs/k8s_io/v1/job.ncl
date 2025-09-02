@@ -1,8 +1,8 @@
 # Module: k8s.io.v1.job
 
-let jobspec = import "./jobspec.ncl" in
 let objectmeta = import "./objectmeta.ncl" in
 let jobstatus = import "./jobstatus.ncl" in
+let jobspec = import "./jobspec.ncl" in
 
 {
   # Job represents the configuration of a single job.

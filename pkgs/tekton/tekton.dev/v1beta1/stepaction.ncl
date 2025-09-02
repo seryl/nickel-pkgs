@@ -1,8 +1,8 @@
 # Module: stepaction.tekton.dev
 
-let k8s_io_envvar = import "k8s_io" in
 let k8s_io_objectmeta = import "k8s_io" in
 let k8s_io_volumemount = import "k8s_io" in
+let k8s_io_envvar = import "k8s_io" in
 
 {
   StepAction = {
@@ -19,7 +19,7 @@ Cannot be updated.
 In CamelCase.
 More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 "%,
-    metadata | optional | k8s_io_envvar.ObjectMeta,
+    metadata | optional | k8s_io_objectmeta.ObjectMeta,
     spec | optional | {
       args | optional | Array String | doc m%"
 Arguments to the entrypoint.
@@ -45,7 +45,7 @@ More info: https://kubernetes.io/docs/tasks/inject-data-application/define-comma
 Description is a user-facing description of the stepaction that may be
 used to populate a UI.
 "%,
-      env | optional | Array k8s_io_envvar.EnvVar | doc m%"
+      env | optional | Array k8s_io_objectmeta.EnvVar | doc m%"
 List of environment variables to set in the container.
 Cannot be updated.
 "%,
@@ -54,7 +54,7 @@ Image reference name to run for this StepAction.
 More info: https://kubernetes.io/docs/concepts/containers/images
 "%,
       params | optional | Array {
-        default | optional | Dyn | doc m%"
+        "default" | optional | Dyn | doc m%"
 Default is the value a parameter takes if no input value is supplied. If
 default is set, a Task may be executed without a supplied value for the
 parameter.
@@ -233,7 +233,7 @@ If set, the fields of SecurityContext override the equivalent fields of PodSecur
 More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 The value set in StepAction will take precedence over the value from Task.
 "%,
-      volumeMounts | optional | Array k8s_io_envvar.VolumeMount | doc m%"
+      volumeMounts | optional | Array k8s_io_objectmeta.VolumeMount | doc m%"
 Volumes to mount into the Step's filesystem.
 Cannot be updated.
 "%,

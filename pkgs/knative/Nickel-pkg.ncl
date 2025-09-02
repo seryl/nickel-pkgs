@@ -1,17 +1,17 @@
 # Amalgam Package Manifest
-# Generated: 2025-09-01T22:54:59.317802+00:00
+# Generated: 2025-09-01T22:55:02.420780+00:00
 # Generator: amalgam v0.6.3
-# Source: https://github.com/cert-manager/cert-manager/tree/v1.18.2/deploy/crds
-# Git ref: v1.18.2
+# Source: https://github.com/knative/operator/tree/knative-v1.17.8/config/crd/bases
+# Git ref: knative-v1.17.8
 {
   # Package identity
-  name = "cert-manager",
-  version = "1.18.2",
+  name = "knative",
+  version = "1.17.8",
   
   # Package information
-  description = "cert-manager CRD type definitions for Nickel",
+  description = "Knative Operator CRD type definitions",
   authors = ["amalgam"],
-  keywords = ["certificates", "tls", "security", "kubernetes", "acme"],
+  keywords = ["serverless", "knative", "functions", "kubernetes", "scale-to-zero"],
   license = "Apache-2.0",
   
   # Dependencies

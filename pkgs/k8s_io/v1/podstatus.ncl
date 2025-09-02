@@ -1,9 +1,9 @@
 # Module: k8s.io.v1.podstatus
 
-let podresourceclaimstatus = import "./podresourceclaimstatus.ncl" in
-let containerstatus = import "./containerstatus.ncl" in
-let hostip = import "./hostip.ncl" in
 let podcondition = import "./podcondition.ncl" in
+let containerstatus = import "./containerstatus.ncl" in
+let podresourceclaimstatus = import "./podresourceclaimstatus.ncl" in
+let hostip = import "./hostip.ncl" in
 let podip = import "./podip.ncl" in
 
 {

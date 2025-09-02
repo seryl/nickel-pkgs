@@ -1,6 +1,6 @@
 # Amalgam Package Manifest
-# Generated: 2025-09-01T19:42:31.642643+00:00
-# Generator: amalgam v0.6.0
+# Generated: 2025-09-01T22:55:03.427704+00:00
+# Generator: amalgam v0.6.3
 # Source: https://github.com/prometheus-operator/prometheus-operator/tree/v0.85.0/example/prometheus-operator-crd
 # Git ref: v0.85.0
 {

@@ -1,9 +1,9 @@
 # Module: task.tekton.dev
 
-let k8s_io_envvar = import "k8s_io" in
-let k8s_io_volumemount = import "k8s_io" in
 let k8s_io_envfromsource = import "k8s_io" in
+let k8s_io_volumemount = import "k8s_io" in
 let k8s_io_objectmeta = import "k8s_io" in
+let k8s_io_envvar = import "k8s_io" in
 
 {
   Task = {
@@ -20,7 +20,7 @@ Cannot be updated.
 In CamelCase.
 More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 "%,
-    metadata | optional | k8s_io_envvar.ObjectMeta,
+    metadata | optional | k8s_io_envfromsource.ObjectMeta,
     spec | optional | {
       description | optional | String | doc m%"
 Description is a user-facing description of the task that may be
@@ -31,7 +31,7 @@ DisplayName is a user-facing name of the task that may be
 used to populate a UI.
 "%,
       params | optional | Array {
-        default | optional | Dyn | doc m%"
+        "default" | optional | Dyn | doc m%"
 Default is the value a parameter takes if no input value is supplied. If
 default is set, a Task may be executed without a supplied value for the
 parameter.
@@ -67,7 +67,7 @@ Name declares the name by which a resource is referenced in the
 definition. Resources may be referenced by name in the definition of a
 Task's steps.
 "%,
-          optional | optional | Bool | doc m%"
+          "optional" | optional | Bool | doc m%"
 Optional declares the resource as optional.
 By default optional is set to false which makes a resource required.
 optional: true - the resource is considered optional
@@ -92,7 +92,7 @@ Name declares the name by which a resource is referenced in the
 definition. Resources may be referenced by name in the definition of a
 Task's steps.
 "%,
-          optional | optional | Bool | doc m%"
+          "optional" | optional | Bool | doc m%"
 Optional declares the resource as optional.
 By default optional is set to false which makes a resource required.
 optional: true - the resource is considered optional
@@ -148,11 +148,11 @@ produce the string literal "$(VAR_NAME)". Escaped references will never be expan
 of whether the variable exists or not. Cannot be updated.
 More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
 "%,
-        env | optional | Array k8s_io_envvar.EnvVar | doc m%"
+        env | optional | Array k8s_io_envfromsource.EnvVar | doc m%"
 List of environment variables to set in the Sidecar.
 Cannot be updated.
 "%,
-        envFrom | optional | Array k8s_io_envvar.EnvFromSource | doc m%"
+        envFrom | optional | Array k8s_io_envfromsource.EnvFromSource | doc m%"
 List of sources to populate environment variables in the Sidecar.
 The keys defined within a source must be a C_IDENTIFIER. All invalid keys
 will be reported as an event when the Sidecar is starting. When a key exists in multiple
@@ -825,7 +825,7 @@ devicePath is the path inside of the container that the device will be mapped to
 "%,
           name | String | doc "name must match the name of a persistentVolumeClaim in the pod",
         } | doc "volumeDevices is the list of block devices to be used by the Sidecar.",
-        volumeMounts | optional | Array k8s_io_envvar.VolumeMount | doc m%"
+        volumeMounts | optional | Array k8s_io_envfromsource.VolumeMount | doc m%"
 Volumes to mount into the Sidecar's filesystem.
 Cannot be updated.
 "%,
@@ -875,11 +875,11 @@ produce the string literal "$(VAR_NAME)". Escaped references will never be expan
 of whether the variable exists or not. Cannot be updated.
 More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
 "%,
-        env | optional | Array k8s_io_envvar.EnvVar | doc m%"
+        env | optional | Array k8s_io_envfromsource.EnvVar | doc m%"
 List of environment variables to set in the container.
 Cannot be updated.
 "%,
-        envFrom | optional | Array k8s_io_envvar.EnvFromSource | doc m%"
+        envFrom | optional | Array k8s_io_envfromsource.EnvFromSource | doc m%"
 List of sources to populate environment variables in the Step.
 The keys defined within a source must be a C_IDENTIFIER. All invalid keys
 will be reported as an event when the container is starting. When a key exists in multiple
@@ -1549,7 +1549,7 @@ devicePath is the path inside of the container that the device will be mapped to
 "%,
           name | String | doc "name must match the name of a persistentVolumeClaim in the pod",
         } | doc "volumeDevices is the list of block devices to be used by the Step.",
-        volumeMounts | optional | Array k8s_io_envvar.VolumeMount | doc m%"
+        volumeMounts | optional | Array k8s_io_envfromsource.VolumeMount | doc m%"
 Volumes to mount into the Step's filesystem.
 Cannot be updated.
 "%,
@@ -1584,11 +1584,11 @@ produce the string literal "$(VAR_NAME)". Escaped references will never be expan
 of whether the variable exists or not. Cannot be updated.
 More info: https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/#running-a-command-in-a-shell
 "%,
-        env | optional | Array k8s_io_envvar.EnvVar | doc m%"
+        env | optional | Array k8s_io_envfromsource.EnvVar | doc m%"
 List of environment variables to set in the container.
 Cannot be updated.
 "%,
-        envFrom | optional | Array k8s_io_envvar.EnvFromSource | doc m%"
+        envFrom | optional | Array k8s_io_envfromsource.EnvFromSource | doc m%"
 List of sources to populate environment variables in the container.
 The keys defined within a source must be a C_IDENTIFIER. All invalid keys
 will be reported as an event when the container is starting. When a key exists in multiple
@@ -2307,7 +2307,7 @@ devicePath is the path inside of the container that the device will be mapped to
 "%,
           name | String | doc "name must match the name of a persistentVolumeClaim in the pod",
         } | doc "volumeDevices is the list of block devices to be used by the Step.",
-        volumeMounts | optional | Array k8s_io_envvar.VolumeMount | doc m%"
+        volumeMounts | optional | Array k8s_io_envfromsource.VolumeMount | doc m%"
 Volumes to mount into the Step's filesystem.
 Cannot be updated.
 "%,
@@ -2363,7 +2363,7 @@ See Pod.spec.volumes (API version: v1)
         description | optional | String | doc "Description is an optional human readable description of this volume.",
         mountPath | optional | String | doc "MountPath overrides the directory that the volume will be made available at.",
         name | String | doc "Name is the name by which you can bind the volume at runtime.",
-        optional | optional | Bool | doc m%"
+        "optional" | optional | Bool | doc m%"
 Optional marks a Workspace as not being required in TaskRuns. By default
 this field is false and so declared workspaces are required.
 "%,

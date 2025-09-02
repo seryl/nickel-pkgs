@@ -1,7 +1,7 @@
 # Module: k8s.io.v1.deploymentspec
 
-let podtemplatespec = import "./podtemplatespec.ncl" in
 let labelselector = import "./labelselector.ncl" in
+let podtemplatespec = import "./podtemplatespec.ncl" in
 let deploymentstrategy = import "./deploymentstrategy.ncl" in
 
 {

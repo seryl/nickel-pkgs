@@ -1,9 +1,9 @@
 # Module: k8s.io.v1.statefulsetspec
 
+let statefulsetpersistentvolumeclaimretentionpolicy = import "./statefulsetpersistentvolumeclaimretentionpolicy.ncl" in
 let statefulsetupdatestrategy = import "./statefulsetupdatestrategy.ncl" in
 let persistentvolumeclaim = import "./persistentvolumeclaim.ncl" in
 let labelselector = import "./labelselector.ncl" in
-let statefulsetpersistentvolumeclaimretentionpolicy = import "./statefulsetpersistentvolumeclaimretentionpolicy.ncl" in
 let podtemplatespec = import "./podtemplatespec.ncl" in
 let statefulsetordinals = import "./statefulsetordinals.ncl" in
 

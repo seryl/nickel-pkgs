@@ -1,13 +1,13 @@
 # Module: applicationset.argoproj.io
 
-let k8s_io_envvar = import "k8s_io" in
 let k8s_io_objectmeta = import "k8s_io" in
+let k8s_io_envvar = import "k8s_io" in
 
 {
   ApplicationSet = {
     apiVersion | optional | String,
     kind | optional | String,
-    metadata | k8s_io_envvar.ObjectMeta,
+    metadata | k8s_io_objectmeta.ObjectMeta,
     spec | {
       applyNestedSelectors | optional | Bool,
       generators | Array {
@@ -142,7 +142,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -257,7 +257,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -428,7 +428,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -543,7 +543,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -716,7 +716,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -831,7 +831,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -994,7 +994,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -1109,7 +1109,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -1282,7 +1282,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -1397,7 +1397,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -1568,7 +1568,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -1683,7 +1683,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -1856,7 +1856,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -1971,7 +1971,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -2134,7 +2134,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -2249,7 +2249,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -2290,7 +2290,7 @@ let k8s_io_objectmeta = import "k8s_io" in
               },
             },
             matrix | optional | Dyn,
-            merge | optional | Dyn,
+            "merge" | optional | Dyn,
             plugin | optional | {
               configMapRef | {
                 name | String,
@@ -2418,7 +2418,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -2533,7 +2533,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -2788,7 +2788,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -2903,7 +2903,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -3161,7 +3161,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -3276,7 +3276,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -3446,7 +3446,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -3561,7 +3561,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -3601,7 +3601,7 @@ let k8s_io_objectmeta = import "k8s_io" in
             },
           },
         },
-        merge | optional | {
+        "merge" | optional | {
           generators | Array {
             clusterDecisionResource | optional | {
               configMapRef | String,
@@ -3734,7 +3734,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -3849,7 +3849,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4020,7 +4020,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4135,7 +4135,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4308,7 +4308,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4423,7 +4423,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4586,7 +4586,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4701,7 +4701,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4742,7 +4742,7 @@ let k8s_io_objectmeta = import "k8s_io" in
               },
             },
             matrix | optional | Dyn,
-            merge | optional | Dyn,
+            "merge" | optional | Dyn,
             plugin | optional | {
               configMapRef | {
                 name | String,
@@ -4870,7 +4870,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -4985,7 +4985,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -5240,7 +5240,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -5355,7 +5355,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -5613,7 +5613,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -5728,7 +5728,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                     name | optional | String,
                     path | optional | String,
                     plugin | optional | {
-                      env | optional | Array k8s_io_envvar.EnvVar,
+                      env | optional | Array k8s_io_objectmeta.EnvVar,
                       name | optional | String,
                       parameters | optional | Array {
                         array | optional | Array String,
@@ -5899,7 +5899,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -6014,7 +6014,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -6181,7 +6181,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -6296,7 +6296,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -6551,7 +6551,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -6666,7 +6666,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -6924,7 +6924,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -7039,7 +7039,7 @@ let k8s_io_objectmeta = import "k8s_io" in
                 name | optional | String,
                 path | optional | String,
                 plugin | optional | {
-                  env | optional | Array k8s_io_envvar.EnvVar,
+                  env | optional | Array k8s_io_objectmeta.EnvVar,
                   name | optional | String,
                   parameters | optional | Array {
                     array | optional | Array String,
@@ -7237,7 +7237,7 @@ let k8s_io_objectmeta = import "k8s_io" in
             name | optional | String,
             path | optional | String,
             plugin | optional | {
-              env | optional | Array k8s_io_envvar.EnvVar,
+              env | optional | Array k8s_io_objectmeta.EnvVar,
               name | optional | String,
               parameters | optional | Array {
                 array | optional | Array String,
@@ -7352,7 +7352,7 @@ let k8s_io_objectmeta = import "k8s_io" in
             name | optional | String,
             path | optional | String,
             plugin | optional | {
-              env | optional | Array k8s_io_envvar.EnvVar,
+              env | optional | Array k8s_io_objectmeta.EnvVar,
               name | optional | String,
               parameters | optional | Array {
                 array | optional | Array String,

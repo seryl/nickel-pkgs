@@ -1,0 +1,21 @@
+{
+  "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "metadata_hash": "4ff95647016ce4c5888fb48bc262eaa5c2928a7af517b1904d57a84d5fff11f5",
+  "combined_hash": "d12ddcae90b5a7ab8f6e1da7e2c0c46f74e8d09a48c929e1a4dbdf3c14374a89",
+  "created_at": "2025-09-01T22:55:02.420908Z",
+  "source_info": {
+    "UrlCollection": {
+      "base_url": "https://github.com/knative/operator/tree/knative-v1.17.8/config/crd/bases@knative-v1.17.8",
+      "urls": [
+        "https://github.com/knative/operator/tree/knative-v1.17.8/config/crd/bases@knative-v1.17.8"
+      ],
+      "etags": [
+        null
+      ],
+      "last_modified": [
+        null
+      ]
+    }
+  },
+  "amalgam_version": "0.6.3"
+}

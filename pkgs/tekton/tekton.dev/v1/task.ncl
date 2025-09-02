@@ -1,9 +1,9 @@
 # Module: task.tekton.dev
 
-let k8s_io_envfromsource = import "k8s_io" in
-let k8s_io_volumemount = import "k8s_io" in
 let k8s_io_objectmeta = import "k8s_io" in
+let k8s_io_volumemount = import "k8s_io" in
 let k8s_io_envvar = import "k8s_io" in
+let k8s_io_envfromsource = import "k8s_io" in
 
 {
   Task = {
@@ -20,7 +20,7 @@ Cannot be updated.
 In CamelCase.
 More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 "%,
-    metadata | optional | k8s_io_envfromsource.ObjectMeta,
+    metadata | optional | k8s_io_objectmeta.ObjectMeta,
     spec | optional | {
       description | optional | String | doc m%"
 Description is a user-facing description of the task that may be
@@ -31,7 +31,7 @@ DisplayName is a user-facing name of the task that may be
 used to populate a UI.
 "%,
       params | optional | Array {
-        default | optional | Dyn | doc m%"
+        "default" | optional | Dyn | doc m%"
 Default is the value a parameter takes if no input value is supplied. If
 default is set, a Task may be executed without a supplied value for the
 parameter.
@@ -128,11 +128,11 @@ ComputeResources required by this Sidecar.
 Cannot be updated.
 More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
 "%,
-        env | optional | Array k8s_io_envfromsource.EnvVar | doc m%"
+        env | optional | Array k8s_io_objectmeta.EnvVar | doc m%"
 List of environment variables to set in the Sidecar.
 Cannot be updated.
 "%,
-        envFrom | optional | Array k8s_io_envfromsource.EnvFromSource | doc m%"
+        envFrom | optional | Array k8s_io_objectmeta.EnvFromSource | doc m%"
 List of sources to populate environment variables in the Sidecar.
 The keys defined within a source must be a C_IDENTIFIER. All invalid keys
 will be reported as an event when the container is starting. When a key exists in multiple
@@ -767,7 +767,7 @@ devicePath is the path inside of the container that the device will be mapped to
 "%,
           name | String | doc "name must match the name of a persistentVolumeClaim in the pod",
         } | doc "volumeDevices is the list of block devices to be used by the Sidecar.",
-        volumeMounts | optional | Array k8s_io_envfromsource.VolumeMount | doc m%"
+        volumeMounts | optional | Array k8s_io_objectmeta.VolumeMount | doc m%"
 Volumes to mount into the Sidecar's filesystem.
 Cannot be updated.
 "%,
@@ -855,11 +855,11 @@ ComputeResources required by this Step.
 Cannot be updated.
 More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
 "%,
-        env | optional | Array k8s_io_envfromsource.EnvVar | doc m%"
+        env | optional | Array k8s_io_objectmeta.EnvVar | doc m%"
 List of environment variables to set in the Step.
 Cannot be updated.
 "%,
-        envFrom | optional | Array k8s_io_envfromsource.EnvFromSource | doc m%"
+        envFrom | optional | Array k8s_io_objectmeta.EnvFromSource | doc m%"
 List of sources to populate environment variables in the Step.
 The keys defined within a source must be a C_IDENTIFIER. All invalid keys
 will be reported as an event when the Step is starting. When a key exists in multiple
@@ -1024,7 +1024,7 @@ devicePath is the path inside of the container that the device will be mapped to
 "%,
           name | String | doc "name must match the name of a persistentVolumeClaim in the pod",
         } | doc "volumeDevices is the list of block devices to be used by the Step.",
-        volumeMounts | optional | Array k8s_io_envfromsource.VolumeMount | doc m%"
+        volumeMounts | optional | Array k8s_io_objectmeta.VolumeMount | doc m%"
 Volumes to mount into the Step's filesystem.
 Cannot be updated.
 "%,
@@ -1097,11 +1097,11 @@ ComputeResources required by this Step.
 Cannot be updated.
 More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
 "%,
-        env | optional | Array k8s_io_envfromsource.EnvVar | doc m%"
+        env | optional | Array k8s_io_objectmeta.EnvVar | doc m%"
 List of environment variables to set in the Step.
 Cannot be updated.
 "%,
-        envFrom | optional | Array k8s_io_envfromsource.EnvFromSource | doc m%"
+        envFrom | optional | Array k8s_io_objectmeta.EnvFromSource | doc m%"
 List of sources to populate environment variables in the Step.
 The keys defined within a source must be a C_IDENTIFIER. All invalid keys
 will be reported as an event when the Step is starting. When a key exists in multiple
@@ -1324,7 +1324,7 @@ devicePath is the path inside of the container that the device will be mapped to
 "%,
           name | String | doc "name must match the name of a persistentVolumeClaim in the pod",
         } | doc "volumeDevices is the list of block devices to be used by the Step.",
-        volumeMounts | optional | Array k8s_io_envfromsource.VolumeMount | doc m%"
+        volumeMounts | optional | Array k8s_io_objectmeta.VolumeMount | doc m%"
 Volumes to mount into the Step's filesystem.
 Cannot be updated.
 "%,
@@ -1377,7 +1377,7 @@ See Pod.spec.volumes (API version: v1)
         description | optional | String | doc "Description is an optional human readable description of this volume.",
         mountPath | optional | String | doc "MountPath overrides the directory that the volume will be made available at.",
         name | String | doc "Name is the name by which you can bind the volume at runtime.",
-        optional | optional | Bool | doc m%"
+        "optional" | optional | Bool | doc m%"
 Optional marks a Workspace as not being required in TaskRuns. By default
 this field is false and so declared workspaces are required.
 "%,

@@ -2,7 +2,7 @@
   "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "metadata_hash": "3be30539de06e7f8bcffda1be0b403b9e5d6bfd79e38a537a406062f4a4dbf5b",
   "combined_hash": "0f22d5a70ad1c5187261ef94a9b25715515fece845b6576c874e1f2aec536bbc",
-  "created_at": "2025-09-01T19:42:31.642903Z",
+  "created_at": "2025-09-01T22:55:03.427860Z",
   "source_info": {
     "UrlCollection": {
       "base_url": "https://github.com/prometheus-operator/prometheus-operator/tree/v0.85.0/example/prometheus-operator-crd@v0.85.0",
@@ -17,5 +17,5 @@
       ]
     }
   },
-  "amalgam_version": "0.6.0"
+  "amalgam_version": "0.6.3"
 }

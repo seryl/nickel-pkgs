@@ -1,9 +1,9 @@
 # Module: knativeeventing.operator.knative.dev
 
-let k8s_io_envvar = import "k8s_io" in
-let k8s_io_objectmeta = import "k8s_io" in
 let k8s_io_volumemount = import "k8s_io" in
+let k8s_io_objectmeta = import "k8s_io" in
 let k8s_io_toleration = import "k8s_io" in
+let k8s_io_envvar = import "k8s_io" in
 
 {
   KnativeEventing = {
@@ -13,7 +13,7 @@ APIVersion defines the versioned schema of this representation of an object. Ser
     kind | optional | String | doc m%"
 Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds
 "%,
-    metadata | optional | k8s_io_envvar.ObjectMeta,
+    metadata | optional | k8s_io_volumemount.ObjectMeta,
     spec | optional | {
       additionalManifests | optional | Array {
         URL | optional | String | doc "The link of the additional manifest URL",
@@ -209,7 +209,7 @@ Describes pod anti-affinity scheduling rules (e.g. avoid putting this pod in the
         } | doc "If specified, the pod's scheduling constraints.",
         annotations | optional | {
         } | doc "Annotations overrides labels for the deployment and its template.",
-        env | optional | Array k8s_io_envvar.EnvVar | doc "Env overrides env vars for the containers.",
+        env | optional | Array k8s_io_volumemount.EnvVar | doc "Env overrides env vars for the containers.",
         hostNetwork | optional | Bool | doc m%"
 Use the host's network namespace if true. Make sure to understand the security implications if you want to enable it. When hostNetwork is enabled, this will set dnsPolicy to ClusterFirstWithHostNet automatically.
 "%,
@@ -272,7 +272,7 @@ Number of seconds after which the probe times out. Defaults to 1 second. Minimum
             memory | optional | String,
           },
         } | doc "If specified, the container's resources.",
-        tolerations | optional | Array k8s_io_envvar.Toleration | doc "If specified, the pod's tolerations.",
+        tolerations | optional | Array k8s_io_volumemount.Toleration | doc "If specified, the pod's tolerations.",
         topologySpreadConstraints | optional | Array {
           labelSelector | optional | {
             matchExpressions | optional | Array {
@@ -326,7 +326,7 @@ An eviction is allowed if at least "minAvailable" pods selected by "selector" wi
         name | optional | String | doc "The name of the podDisruptionBudget",
       } | doc "A mapping of podDisruptionBudget name to override",
       registry | optional | {
-        default | optional | String | doc m%"
+        "default" | optional | String | doc m%"
 The default image reference template to use for all knative images. Takes the form of example-registry.io/custom/path/${NAME}:custom-tag
 "%,
         imagePullSecrets | optional | Array {
@@ -558,7 +558,7 @@ Describes pod anti-affinity scheduling rules (e.g. avoid putting this pod in the
         } | doc "If specified, the pod's scheduling constraints.",
         annotations | optional | {
         } | doc "Annotations overrides labels for the deployment and its template.",
-        env | optional | Array k8s_io_envvar.EnvVar | doc "Env overrides env vars for the containers.",
+        env | optional | Array k8s_io_volumemount.EnvVar | doc "Env overrides env vars for the containers.",
         hostNetwork | optional | Bool | doc m%"
 Use the host's network namespace if true. Make sure to understand the security implications if you want to enable it. When hostNetwork is enabled, this will set dnsPolicy to ClusterFirstWithHostNet automatically.
 "%,
@@ -621,7 +621,7 @@ Number of seconds after which the probe times out. Defaults to 1 second. Minimum
             memory | optional | String,
           },
         } | doc "If specified, the container's resources.",
-        tolerations | optional | Array k8s_io_envvar.Toleration | doc "If specified, the pod's tolerations.",
+        tolerations | optional | Array k8s_io_volumemount.Toleration | doc "If specified, the pod's tolerations.",
         topologySpreadConstraints | optional | Array {
           labelSelector | optional | {
             matchExpressions | optional | Array {
@@ -653,7 +653,7 @@ WhenUnsatisfiable indicates how to deal with a pod if it doesn't satisfy the spr
 "%,
         } | doc "If specified, the pod's topology spread constraints.",
         version | optional | String | doc "Version the cluster should be on.",
-        volumeMounts | optional | Array k8s_io_envvar.VolumeMount | doc m%"
+        volumeMounts | optional | Array k8s_io_volumemount.VolumeMount | doc m%"
 VolumeMounts allows configuration of additional VolumeMounts on the output StatefulSet definition. VolumeMounts specified will be appended to other VolumeMounts in the alertmanager container, that are generated as a result of StorageSpec objects.
 "%,
       } | doc "A mapping of deployment or statefulset name to override",

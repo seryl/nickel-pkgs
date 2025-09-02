@@ -177,7 +177,7 @@ i.e. either after all Tasks are finished executing successfully
 or after a failure which would result in ending the Pipeline
 "%,
       params | optional | Array {
-        default | optional | Dyn | doc m%"
+        "default" | optional | Dyn | doc m%"
 Default is the value a parameter takes if no input value is supplied. If
 default is set, a Task may be executed without a supplied value for the
 parameter.
@@ -363,7 +363,7 @@ used in the Pipeline. It can be useful to include a bit of detail about which
 tasks are intended to have access to the data on the workspace.
 "%,
         name | String | doc "Name is the name of a workspace to be provided by a PipelineRun.",
-        optional | optional | Bool | doc m%"
+        "optional" | optional | Bool | doc m%"
 Optional marks a Workspace as not being required in PipelineRuns. By default
 this field is false and so declared workspaces are required.
 "%,

@@ -1,6 +1,6 @@
 # Amalgam Package Manifest
-# Generated: 2025-09-01T19:42:26.894937+00:00
-# Generator: amalgam v0.6.0
+# Generated: 2025-09-01T22:54:58.806722+00:00
+# Generator: amalgam v0.6.3
 # Source: https://github.com/argoproj/argo-cd/tree/v3.1.1/manifests/crds
 # Git ref: v3.1.1
 {

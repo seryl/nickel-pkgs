@@ -2,7 +2,7 @@
   "content_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "metadata_hash": "5a4011c051000fcca1cd9ba6d2d295bd1ee7697663b924a24442cd5eaea78c41",
   "combined_hash": "7af3079706c980060447789eee80ca9e43ecff43116eef9b5f5ccb70facff482",
-  "created_at": "2025-09-01T19:42:27.602079Z",
+  "created_at": "2025-09-01T22:54:59.317940Z",
   "source_info": {
     "UrlCollection": {
       "base_url": "https://github.com/cert-manager/cert-manager/tree/v1.18.2/deploy/crds@v1.18.2",
@@ -17,5 +17,5 @@
       ]
     }
   },
-  "amalgam_version": "0.6.0"
+  "amalgam_version": "0.6.3"
 }

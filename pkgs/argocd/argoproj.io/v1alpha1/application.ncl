@@ -402,14 +402,14 @@ This is typically set in a Rollback operation and is nil during a Sync operation
         syncOptions | optional | Array String | doc "SyncOptions provide per-sync sync-options, e.g. Validate=false",
         syncStrategy | optional | {
           apply | optional | {
-            force | optional | Bool | doc m%"
+            "force" | optional | Bool | doc m%"
 Force indicates whether or not to supply the --force flag to `kubectl apply`.
 The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
 retried for 5 times.
 "%,
           } | doc "Apply will perform a `kubectl apply` to perform the sync.",
           hook | optional | {
-            force | optional | Bool | doc m%"
+            "force" | optional | Bool | doc m%"
 Force indicates whether or not to supply the --force flag to `kubectl apply`.
 The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
 retried for 5 times.
@@ -1601,14 +1601,14 @@ This is typically set in a Rollback operation and is nil during a Sync operation
             syncOptions | optional | Array String | doc "SyncOptions provide per-sync sync-options, e.g. Validate=false",
             syncStrategy | optional | {
               apply | optional | {
-                force | optional | Bool | doc m%"
+                "force" | optional | Bool | doc m%"
 Force indicates whether or not to supply the --force flag to `kubectl apply`.
 The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
 retried for 5 times.
 "%,
               } | doc "Apply will perform a `kubectl apply` to perform the sync.",
               hook | optional | {
-                force | optional | Bool | doc m%"
+                "force" | optional | Bool | doc m%"
 Force indicates whether or not to supply the --force flag to `kubectl apply`.
 The --force flag deletes and re-create the resource, when PATCH encounters conflict and has
 retried for 5 times.
