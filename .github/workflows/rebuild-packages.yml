@@ -1,0 +1,144 @@
+name: Rebuild Packages
+
+on:
+  # Triggered by amalgam repo
+  repository_dispatch:
+    types: [amalgam-updated]
+
+  # Manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      amalgam_commit:
+        description: 'Specific Amalgam commit to use (optional)'
+        required: false
+
+  # Scheduled rebuild (weekly on Monday)
+  schedule:
+    - cron: '0 2 * * 1'  # 2 AM UTC every Monday
+
+jobs:
+  regenerate-packages:
+    name: Regenerate All Packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout nickel-pkgs
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Checkout amalgam (latest or specific commit)
+        uses: actions/checkout@v4
+        with:
+          repository: seryl/amalgam
+          path: amalgam
+          ref: ${{ github.event.client_payload.amalgam_commit || github.event.inputs.amalgam_commit || 'main' }}
+
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build Amalgam
+        working-directory: amalgam
+        run: |
+          cargo build --release --bin amalgam
+          echo "$PWD/target/release" >> $GITHUB_PATH
+
+      - name: Generate packages from manifest
+        run: |
+          # Run amalgam with the manifest in nickel-pkgs
+          if [ -f ".amalgam-manifest.toml" ]; then
+            amalgam generate-from-manifest
+          else
+            echo "No .amalgam-manifest.toml found, creating default..."
+            cat > .amalgam-manifest.toml << 'EOF'
+          [config]
+          output_base = "pkgs"
+          package_mode = true
+          base_package_id = "github:seryl/nickel-pkgs/pkgs"
+
+          [[packages]]
+          source = "https://raw.githubusercontent.com/kubernetes/kubernetes/v1.33.4/api/openapi-spec/swagger.json"
+
+          [[packages]]
+          source = "https://github.com/crossplane/crossplane/tree/v2.0.2/cluster/crds"
+          EOF
+            amalgam generate-from-manifest
+          fi
+
+      - name: Commit and create PR if changes
+        id: commit
+        run: |
+          git config user.name "amalgam-bot[bot]"
+          git config user.email "amalgam-bot[bot]@users.noreply.github.com"
+
+          if [ -n "$(git status --porcelain pkgs/)" ]; then
+            # Get trigger info
+            AMALGAM_COMMIT="${{ github.event.client_payload.amalgam_commit_short || 'main' }}"
+            TRIGGER_REASON="${{ github.event.client_payload.trigger_reason || 'Scheduled rebuild' }}"
+
+            # Create branch
+            BRANCH_NAME="auto-rebuild/$(date +%Y%m%d-%H%M%S)"
+            git checkout -b "$BRANCH_NAME"
+
+            # Commit changes
+            git add pkgs/
+            git commit -m "chore: regenerate packages
+
+Triggered by: $TRIGGER_REASON
+Amalgam commit: $AMALGAM_COMMIT
+
+Updated packages:
+$(git diff --name-only HEAD~1 | grep '^pkgs/' | head -10)
+$([ $(git diff --name-only HEAD~1 | grep '^pkgs/' | wc -l) -gt 10 ] && echo "... and more")"
+
+            # Push branch
+            git push origin "$BRANCH_NAME"
+
+            # Create PR
+            gh pr create \
+              --title "Regenerate packages ($(date +%Y-%m-%d))" \
+              --body "## 🤖 Automated Package Regeneration
+
+**Trigger Reason:** $TRIGGER_REASON
+**Amalgam Commit:** [$AMALGAM_COMMIT](https://github.com/seryl/amalgam/commit/${{ github.event.client_payload.amalgam_commit }})
+**Workflow:** [View run](${{ github.event.client_payload.workflow_url }})
+
+### Changes
+This PR contains regenerated Nickel type packages using the latest Amalgam tooling.
+
+### Verification
+- [ ] Check that mod.ncl files have proper documentation
+- [ ] Verify package cross-references are correct
+- [ ] Test import resolution in dependent projects
+
+cc @seryl" \
+              --label "automated,packages"
+
+            echo "pr_created=true" >> $GITHUB_OUTPUT
+            echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          else
+            echo "No changes to commit"
+            echo "pr_created=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create summary
+        if: always()
+        run: |
+          echo "## 📦 Package Regeneration Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.commit.outputs.pr_created }}" == "true" ]; then
+            echo "✅ **Status:** Changes detected and PR created" >> $GITHUB_STEP_SUMMARY
+            echo "**Branch:** \`${{ steps.commit.outputs.branch }}\`" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ **Status:** No changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Amalgam Commit:** ${{ github.event.client_payload.amalgam_commit_short || 'main' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event.client_payload.trigger_reason || 'Scheduled' }}" >> $GITHUB_STEP_SUMMARY
