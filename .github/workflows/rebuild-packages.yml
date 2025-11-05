@@ -12,10 +12,6 @@ on:
         description: 'Specific Amalgam commit to use (optional)'
         required: false
 
-  # Scheduled rebuild (weekly on Monday)
-  schedule:
-    - cron: '0 2 * * 1'  # 2 AM UTC every Monday
-
 jobs:
   regenerate-packages:
     name: Regenerate All Packages
