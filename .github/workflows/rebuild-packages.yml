@@ -81,26 +81,31 @@ jobs:
 
             # Commit changes
             git add pkgs/
-            git commit -m "$(cat <<EOF
-chore: regenerate packages
+
+            # Build commit message
+            UPDATED_FILES=$(git diff --name-only HEAD | grep '^pkgs/' | head -10)
+            FILE_COUNT=$(git diff --name-only HEAD | grep '^pkgs/' | wc -l)
+
+            COMMIT_MSG="chore: regenerate packages
 
 Triggered by: $TRIGGER_REASON
 Amalgam commit: $AMALGAM_COMMIT
 
 Updated packages:
-$(git diff --name-only HEAD~1 | grep '^pkgs/' | head -10)
-$([ $(git diff --name-only HEAD~1 | grep '^pkgs/' | wc -l) -gt 10 ] && echo "... and more")
-EOF
-)"
+$UPDATED_FILES"
+
+            if [ "$FILE_COUNT" -gt 10 ]; then
+              COMMIT_MSG="$COMMIT_MSG
+... and more"
+            fi
+
+            git commit -m "$COMMIT_MSG"
 
             # Push branch
             git push origin "$BRANCH_NAME"
 
             # Create PR
-            gh pr create \
-              --title "Regenerate packages ($(date +%Y-%m-%d))" \
-              --body "$(cat <<EOF
-## 🤖 Automated Package Regeneration
+            PR_BODY="## 🤖 Automated Package Regeneration
 
 **Trigger Reason:** $TRIGGER_REASON
 **Amalgam Commit:** [$AMALGAM_COMMIT](https://github.com/seryl/amalgam/commit/${{ github.event.client_payload.amalgam_commit }})
@@ -114,9 +119,11 @@ This PR contains regenerated Nickel type packages using the latest Amalgam tooli
 - [ ] Verify package cross-references are correct
 - [ ] Test import resolution in dependent projects
 
-cc @seryl
-EOF
-)" \
+cc @seryl"
+
+            gh pr create \
+              --title "Regenerate packages ($(date +%Y-%m-%d))" \
+              --body "$PR_BODY" \
               --label "automated,packages"
 
             echo "pr_created=true" >> $GITHUB_OUTPUT
