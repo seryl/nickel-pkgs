@@ -73,7 +73,7 @@ jobs:
           if [ -n "$(git status --porcelain pkgs/)" ]; then
             # Get trigger info
             AMALGAM_COMMIT="${{ github.event.client_payload.amalgam_commit_short || 'main' }}"
-            TRIGGER_REASON="${{ github.event.client_payload.trigger_reason || 'Scheduled rebuild' }}"
+            TRIGGER_REASON="${{ github.event.client_payload.trigger_reason || 'Manual trigger' }}"
 
             # Create branch
             BRANCH_NAME="auto-rebuild/$(date +%Y%m%d-%H%M%S)"
@@ -137,4 +137,4 @@ cc @seryl" \
 
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Amalgam Commit:** ${{ github.event.client_payload.amalgam_commit_short || 'main' }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Trigger:** ${{ github.event.client_payload.trigger_reason || 'Scheduled' }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event.client_payload.trigger_reason || 'Manual' }}" >> $GITHUB_STEP_SUMMARY
