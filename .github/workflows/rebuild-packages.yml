@@ -82,49 +82,51 @@ jobs:
             # Commit changes
             git add pkgs/
 
-            # Build commit message
-            UPDATED_FILES=$(git diff --name-only HEAD | grep '^pkgs/' | head -10)
+            # Build commit message and commit
+            UPDATED_FILES=$(git diff --name-only HEAD | grep '^pkgs/' | head -10 | tr '\n' ' ')
             FILE_COUNT=$(git diff --name-only HEAD | grep '^pkgs/' | wc -l)
 
             if [ "$FILE_COUNT" -gt 10 ]; then
-              MORE_FILES="... and $(($FILE_COUNT - 10)) more files"
+              MORE_INFO=" (and $(($FILE_COUNT - 10)) more)"
             else
-              MORE_FILES=""
+              MORE_INFO=""
             fi
 
-            git commit -m "chore: regenerate packages
-
-            Triggered by: $TRIGGER_REASON
-            Amalgam commit: $AMALGAM_COMMIT
-
-            Updated packages:
-            $UPDATED_FILES
-            $MORE_FILES"
+            printf "chore: regenerate packages\n\nTriggered by: %s\nAmalgam commit: %s\n\nUpdated files: %s%s\n" \
+              "$TRIGGER_REASON" "$AMALGAM_COMMIT" "$UPDATED_FILES" "$MORE_INFO" | \
+            git commit -F-
 
             # Push branch
             git push origin "$BRANCH_NAME"
 
             # Create PR
-            PR_BODY="## 🤖 Automated Package Regeneration
+            cat > /tmp/pr-body.md <<'PRBODY'
+          ## 🤖 Automated Package Regeneration
 
-**Trigger Reason:** $TRIGGER_REASON
-**Amalgam Commit:** [$AMALGAM_COMMIT](https://github.com/seryl/amalgam/commit/${{ github.event.client_payload.amalgam_commit }})
-**Workflow:** [View run](${{ github.event.client_payload.workflow_url }})
+          **Trigger Reason:** TRIGGER_PLACEHOLDER
+          **Amalgam Commit:** [COMMIT_PLACEHOLDER](COMMIT_URL_PLACEHOLDER)
+          **Workflow:** [View run](WORKFLOW_URL_PLACEHOLDER)
 
-### Changes
-This PR contains regenerated Nickel type packages using the latest Amalgam tooling.
+          ### Changes
+          This PR contains regenerated Nickel type packages using the latest Amalgam tooling.
 
-### Verification
-- [ ] Check that mod.ncl files have proper documentation
-- [ ] Verify package cross-references are correct
-- [ ] Test import resolution in dependent projects
+          ### Verification
+          - [ ] Check that mod.ncl files have proper documentation
+          - [ ] Verify package cross-references are correct
+          - [ ] Test import resolution in dependent projects
 
-cc @seryl"
+          cc @seryl
+          PRBODY
+            sed -i 's/^          //' /tmp/pr-body.md
+            sed -i "s|TRIGGER_PLACEHOLDER|$TRIGGER_REASON|g" /tmp/pr-body.md
+            sed -i "s|COMMIT_PLACEHOLDER|$AMALGAM_COMMIT|g" /tmp/pr-body.md
+            sed -i "s|COMMIT_URL_PLACEHOLDER|https://github.com/seryl/amalgam/commit/${{ github.event.client_payload.amalgam_commit }}|g" /tmp/pr-body.md
+            sed -i "s|WORKFLOW_URL_PLACEHOLDER|${{ github.event.client_payload.workflow_url }}|g" /tmp/pr-body.md
 
             gh pr create \
               --title "Regenerate packages ($(date +%Y-%m-%d))" \
-              --body "$PR_BODY" \
-              --label "automated,packages"
+              --label "automated,packages" \
+              --body-file /tmp/pr-body.md
 
             echo "pr_created=true" >> $GITHUB_OUTPUT
             echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
