@@ -99,29 +99,24 @@ jobs:
             # Push branch
             git push origin "$BRANCH_NAME"
 
-            # Create PR
-            cat > /tmp/pr-body.md <<'PRBODY'
-          ## 🤖 Automated Package Regeneration
-
-          **Trigger Reason:** TRIGGER_PLACEHOLDER
-          **Amalgam Commit:** [COMMIT_PLACEHOLDER](COMMIT_URL_PLACEHOLDER)
-          **Workflow:** [View run](WORKFLOW_URL_PLACEHOLDER)
-
-          ### Changes
-          This PR contains regenerated Nickel type packages using the latest Amalgam tooling.
-
-          ### Verification
-          - [ ] Check that mod.ncl files have proper documentation
-          - [ ] Verify package cross-references are correct
-          - [ ] Test import resolution in dependent projects
-
-          cc @seryl
-          PRBODY
-            sed -i 's/^          //' /tmp/pr-body.md
-            sed -i "s|TRIGGER_PLACEHOLDER|$TRIGGER_REASON|g" /tmp/pr-body.md
-            sed -i "s|COMMIT_PLACEHOLDER|$AMALGAM_COMMIT|g" /tmp/pr-body.md
-            sed -i "s|COMMIT_URL_PLACEHOLDER|https://github.com/seryl/amalgam/commit/${{ github.event.client_payload.amalgam_commit }}|g" /tmp/pr-body.md
-            sed -i "s|WORKFLOW_URL_PLACEHOLDER|${{ github.event.client_payload.workflow_url }}|g" /tmp/pr-body.md
+            # Create PR with body
+            {
+              echo "## 🤖 Automated Package Regeneration"
+              echo ""
+              echo "**Trigger Reason:** $TRIGGER_REASON"
+              echo "**Amalgam Commit:** [$AMALGAM_COMMIT](https://github.com/seryl/amalgam/commit/${{ github.event.client_payload.amalgam_commit }})"
+              echo "**Workflow:** [View run](${{ github.event.client_payload.workflow_url }})"
+              echo ""
+              echo "### Changes"
+              echo "This PR contains regenerated Nickel type packages using the latest Amalgam tooling."
+              echo ""
+              echo "### Verification"
+              echo "- [ ] Check that mod.ncl files have proper documentation"
+              echo "- [ ] Verify package cross-references are correct"
+              echo "- [ ] Test import resolution in dependent projects"
+              echo ""
+              echo "cc @seryl"
+            } > /tmp/pr-body.md
 
             gh pr create \
               --title "Regenerate packages ($(date +%Y-%m-%d))" \
