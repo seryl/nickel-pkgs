@@ -99,29 +99,9 @@ jobs:
             # Push branch
             git push origin "$BRANCH_NAME"
 
-            # Create PR with body
-            {
-              echo "## 🤖 Automated Package Regeneration"
-              echo ""
-              echo "**Trigger Reason:** $TRIGGER_REASON"
-              echo "**Amalgam Commit:** [$AMALGAM_COMMIT](https://github.com/seryl/amalgam/commit/${{ github.event.client_payload.amalgam_commit }})"
-              echo "**Workflow:** [View run](${{ github.event.client_payload.workflow_url }})"
-              echo ""
-              echo "### Changes"
-              echo "This PR contains regenerated Nickel type packages using the latest Amalgam tooling."
-              echo ""
-              echo "### Verification"
-              echo "- [ ] Check that mod.ncl files have proper documentation"
-              echo "- [ ] Verify package cross-references are correct"
-              echo "- [ ] Test import resolution in dependent projects"
-              echo ""
-              echo "cc @seryl"
-            } > /tmp/pr-body.md
-
-            gh pr create \
-              --title "Regenerate packages ($(date +%Y-%m-%d))" \
-              --label "automated,packages" \
-              --body-file /tmp/pr-body.md
+            # Create PR
+            PR_TITLE="Regenerate packages ($(date +%Y-%m-%d))"
+            gh pr create --title "$PR_TITLE" --label "automated,packages" --body "Automated package regeneration triggered by $TRIGGER_REASON using Amalgam commit $AMALGAM_COMMIT"
 
             echo "pr_created=true" >> $GITHUB_OUTPUT
             echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
