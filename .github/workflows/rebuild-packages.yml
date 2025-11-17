@@ -49,18 +49,19 @@ jobs:
             amalgam generate-from-manifest
           else
             echo "No .amalgam-manifest.toml found, creating default..."
-            cat > .amalgam-manifest.toml << 'EOF'
-          [config]
-          output_base = "pkgs"
-          package_mode = true
-          base_package_id = "github:seryl/nickel-pkgs/pkgs"
+            cat > .amalgam-manifest.toml <<'MANIFEST'
+            [config]
+            output_base = "pkgs"
+            package_mode = true
+            base_package_id = "github:seryl/nickel-pkgs/pkgs"
 
-          [[packages]]
-          source = "https://raw.githubusercontent.com/kubernetes/kubernetes/v1.33.4/api/openapi-spec/swagger.json"
+            [[packages]]
+            source = "https://raw.githubusercontent.com/kubernetes/kubernetes/v1.33.4/api/openapi-spec/swagger.json"
 
-          [[packages]]
-          source = "https://github.com/crossplane/crossplane/tree/v2.0.2/cluster/crds"
-          EOF
+            [[packages]]
+            source = "https://github.com/crossplane/crossplane/tree/v2.0.2/cluster/crds"
+            MANIFEST
+            sed -i 's/^            //' .amalgam-manifest.toml
             amalgam generate-from-manifest
           fi
 
@@ -100,7 +101,7 @@ jobs:
             git push origin "$BRANCH_NAME"
 
             # Create PR
-            PR_TITLE="Regenerate packages ($(date +%Y-%m-%d))"
+            PR_TITLE="Regenerate packages $(date +%Y-%m-%d)"
             gh pr create --title "$PR_TITLE" --label "automated,packages" --body "Automated package regeneration triggered by $TRIGGER_REASON using Amalgam commit $AMALGAM_COMMIT"
 
             echo "pr_created=true" >> $GITHUB_OUTPUT
@@ -115,16 +116,16 @@ jobs:
       - name: Create summary
         if: always()
         run: |
-          echo "## 📦 Package Regeneration Complete" >> $GITHUB_STEP_SUMMARY
+          echo "## Package Regeneration Complete" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           if [ "${{ steps.commit.outputs.pr_created }}" == "true" ]; then
-            echo "✅ **Status:** Changes detected and PR created" >> $GITHUB_STEP_SUMMARY
-            echo "**Branch:** \`${{ steps.commit.outputs.branch }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "Status: Changes detected and PR created" >> $GITHUB_STEP_SUMMARY
+            echo "Branch: ${{ steps.commit.outputs.branch }}" >> $GITHUB_STEP_SUMMARY
           else
-            echo "ℹ️ **Status:** No changes detected" >> $GITHUB_STEP_SUMMARY
+            echo "Status: No changes detected" >> $GITHUB_STEP_SUMMARY
           fi
 
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Amalgam Commit:** ${{ github.event.client_payload.amalgam_commit_short || 'main' }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Trigger:** ${{ github.event.client_payload.trigger_reason || 'Manual' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Amalgam Commit: ${{ github.event.client_payload.amalgam_commit_short || 'main' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Trigger: ${{ github.event.client_payload.trigger_reason || 'Manual' }}" >> $GITHUB_STEP_SUMMARY
