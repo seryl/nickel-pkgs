@@ -2,6 +2,8 @@
 
 **Nickel Package Repository for [Amalgam](https://github.com/seryl/amalgam)-Generated Types**
 
+<!-- Testing CI workflow validation -->
+
 This repository contains type-safe [Nickel](https://nickel-lang.org) configuration packages automatically generated using Amalgam from various schema sources including Kubernetes CRDs, OpenAPI specifications, and other type definitions. It serves as a centralized registry of strongly-typed Nickel definitions for infrastructure as code.
 
 ## 📦 Available Packages
